@@ -1,0 +1,37 @@
+Sub configurations()
+    Dim sku As Object
+    Dim atributos As Object
+    Dim resultados As Object
+    Dim posiciones, fila As Integer
+    Dim rng As Range, cell As Range
+    Dim stringResultado As String
+    Dim arr As Variant
+    
+    Set sku = CreateObject("System.Collections.ArrayList")
+    Set atributos = CreateObject("System.Collections.ArrayList")
+    Set resultados = CreateObject("System.Collections.ArrayList")
+    Set rng = Range("D2:D14")
+    
+    For Each cell In rng
+        If cell.Value = "simple" Then
+            sku.Add cell.Offset(0, -3).Value
+            atributos.Add cell.Offset(0, 47).Value
+        Else
+            posiciones = sku.Count
+            For i = 0 To posiciones - 1
+                resultados.Add "sku=" + sku(i) + "," + atributos(i) + "|"
+            Next i
+            
+            arr = resultados.ToArray
+            cell.Offset(0, 84).Value = Join(arr)
+            
+            sku.Clear
+            atributos.Clear
+        End If
+    Next cell
+    
+     'For Each Item In atributos
+        'Debug.Print Item
+    'Next Item
+    'Para ver la salida en inmediato windows (Ctrl+G)
+End Sub

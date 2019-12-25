@@ -10,7 +10,7 @@ Sub configurations()
     Set sku = CreateObject("System.Collections.ArrayList")
     Set atributos = CreateObject("System.Collections.ArrayList")
     Set resultados = CreateObject("System.Collections.ArrayList")
-    Set rng = Range("D2:D14")
+    Set rng = Range("D2:D1343")
     
     For Each cell In rng
         If cell.Value = "simple" Then
@@ -27,6 +27,8 @@ Sub configurations()
             
             sku.Clear
             atributos.Clear
+            resultados.Clear
+            Erase arr
         End If
     Next cell
     

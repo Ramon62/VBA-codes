@@ -1,0 +1,31 @@
+Sub tabla()
+Dim htmlText1, htmlText2, htmlText3, htmlText4, htmlText5, htmlText6, htmlText7, htmlText8, htmlText9, htmlText10, htmlText11, htmlText12, htmlText13, htmlText14, htmlText15, htmlText16, htmlText17, htmlText18, htmlText19 As String
+Dim htmltotal As String
+Dim acabado, largo, entreEjes As Range
+
+htmlText1 = "<table class='table'>"
+htmlText2 = "<thead class='thead-dark'>"
+htmlText3 = "<tr>"
+htmlText4 = "<th scope='col'>Acabado</th>"
+htmlText5 = "<th scope='col'>Largo</th>"
+htmlText6 = "<th scope='col'>Entre ejes</th>"
+htmlText7 = "</tr>"
+htmlText8 = "</thead>"
+htmlText9 = "<tbody>"
+htmlText10 = "<tr>"
+htmlText11 = "<td>"
+htmlText12 = "</td>"
+htmlText13 = "<td>"
+htmlText14 = "</td>"
+htmlText15 = "<td>"
+htmlText16 = "</td>"
+htmlText17 = "</tr>"
+htmlText18 = "</tbody>"
+htmlText19 = "</table>"
+  
+For i = 2 To 1102
+  htmltotal = htmlText1 + htmlText2 + htmlText3 + htmlText4 + htmlText5 + htmlText6 + htmlText7 + htmlText8 + htmlText9 + htmlText10 + htmlText11 + Range("AW" & i).Value + htmlText12 + htmlText13 + Range("W" & i).Value + htmlText14 + Range("X" & i).Value + htmlText15 + htmlText16
+  
+  Range("J",i).Value=htmltotal
+Next i
+End Sub

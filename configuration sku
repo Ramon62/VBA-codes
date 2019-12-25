@@ -10,7 +10,7 @@ Sub configurations()
     Set sku = CreateObject("System.Collections.ArrayList")
     Set atributos = CreateObject("System.Collections.ArrayList")
     Set resultados = CreateObject("System.Collections.ArrayList")
-    Set rng = Range("D2:D1343")
+    Set rng = Range("D2:D1343") 'Cambiar rango dependiendo de la dimension de los productos
     
     For Each cell In rng
         If cell.Value = "simple" Then
